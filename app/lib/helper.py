@@ -1,6 +1,3 @@
-from msilib.schema import tables
-
-
 def listRealtionUser(table):
     data = table.query.all()
     tables = []
