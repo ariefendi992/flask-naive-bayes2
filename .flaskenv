@@ -1,0 +1,4 @@
+FLASK_APP=app
+FLASK_ENV=development
+SQLALCHEMY_DB_URI=sqlite:///beasiswa.db
+SECRET_KEY=73ef3a10279900b52426e7acd7d86ead787705d402a34d8de988c1019dc183ab
