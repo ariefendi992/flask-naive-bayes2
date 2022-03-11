@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+<!--- set filename -->
+{% set filename='testUkt' %}
+<!--- page title -->
+{% block title %} Testing Data UKT {% endblock %}
+<!--- item breadcrumb -->
+{% block breadcrumb %} test {% endblock %}
+<!--- content -->
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">UJI DATA</h4>
+      </div>
+      <div class="card-body">
+        <form action="" method="post">
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Nama</label>
+            <div class="col-md-10">
+              <select class="form-control form-select" name="nama">
+                <option>.:: Select Name ::.</option>
+                {% for x in user %}
+                <option value="{{ x.id}}">{{ x.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Fakultas</label>
+            <div class="col-md-10">
+              <select class="form-control form-select" name="fakultas">
+                <option>.:: Select Fakultas ::.</option>
+                {% for x in fakultas %}
+                <option value="{{ x.id}}">{{ x.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Jurusan</label>
+            <div class="col-md-10">
+              <select class="form-control form-select" name="jurusan">
+                <option>.:: Select Jurusan ::.</option>
+                {% for x in jurusan %}
+                <option value="{{ x.id}}">{{ x.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Semester</label>
+            <div class="col-md-10">
+              <select class="form-control form-select" name="semester">
+                <option>.:: Select Semester ::.</option>
+                {% for x in semester %}
+                <option value="{{ x.id}}">{{ x.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">IPK</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="ipk" placeholder="IPK 2.8 - 4.0" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Status Mhs</label>
+            <div class="col-md-10">
+              <select class="form-control form-select" name="status">
+                <option>.:: Select Status Mahasiswa::.</option>
+                <option value="aktif">Aktif</option>
+                <option value="cuti">Cuti</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Organisasi</label>
+            <div class="col-md-10">
+              <select class="form-control form-select" name="organisasi">
+                <option>.:: Select Status Organiasai ::.</option>
+                <option value="ada">Ada</option>
+                <option value="pasif">Pasif</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Jumlah Tanggungan</label>
+            <div class="col-md-10">
+              <select class="form-control form-select" name="tanggungan">
+                <option>.:: Select JML Tanggungan Orang Tua ::.</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">.:: Pendapatan Orang Tua ::.</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="pendapatan" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-2"></label>
+            <div class="col-md-10 text-start">
+              <button type="submit" class="btn btn-primary">Test Data</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

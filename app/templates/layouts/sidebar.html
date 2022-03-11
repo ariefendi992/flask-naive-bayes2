@@ -1,0 +1,29 @@
+<div class="sidebar-inner slimscroll">
+  <div id="sidebar-menu" class="sidebar-menu">
+    <ul>
+      <li class="menu-title"></li>
+      <li class="{{'active' if filename == 'dashboard' else ''}}">
+        <a href=" {{url_for('dashboard.indexDashboard')}} "><i class="fe fe-home"></i> <span>Dashboard</span></a>
+      </li>
+      <li class="submenu">
+        <a href="#"><i class="fe fe-table"></i> <span>Training Data</span> <span class="menu-arrow"></span></a>
+        <ul style="display: none">
+          <li><a href=" {{url_for('ukt.indexUkt')}} " class="{{'active' if filename == 'indexUkt' or filename == 'addUkt' else ''}}">Beasiswa UKT</a></li>
+          <li><a href="#" class="">Beasiswa PPA</a></li>
+          <li><a href="#" class="">Beasiswa Bidik Misi</a></li>
+        </ul>
+      </li>
+      <li class="submenu">
+        <a href="#"><i class="fe fe-table"></i> <span>Testing Data</span> <span class="menu-arrow"></span></a>
+        <ul style="display: none">
+          <li><a href=" {{url_for('ukt.testUkt')}} " class="{{'active' if filename == 'testUkt'  else ''}}">Beasiswa UKT</a></li>
+          <li><a href="#" class="">Beasiswa PPA</a></li>
+          <li><a href="#" class="">Beasiswa Bidik Misi</a></li>
+        </ul>
+      </li>
+      <li class="{{'active' if filename == 'indexUser' or filename == 'addUser' else ''}}">
+        <a href=" {{url_for('users.indexUser')}} "><i class="fe fe-user"></i> <span>Data User</span></a>
+      </li>
+    </ul>
+  </div>
+</div>

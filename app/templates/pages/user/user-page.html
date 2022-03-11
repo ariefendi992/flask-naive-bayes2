@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+<!--- set filename -->
+{% set filename='indexUser' %}
+<!--- page title -->
+{% block title %} Data User {% endblock %}
+<!--- item breadcrumb -->
+{% block breadcrumb %} User {% endblock %}
+<!--- content -->
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12 d-flex">
+    <div class="card card-table flex-fill">
+      <div class="card-header">
+        <a href=" {{url_for('users.addUser')}} " class="btn btn-primary">.:: Tambah Data ::.</a>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-center mb-0">
+            <thead>
+              <tr>
+                <th>NIM</th>
+                <th>Name</th>
+                <th>TGL Lahir</th>
+                <th>Alamat</th>
+                <th>Gender</th>
+                <th>Created At</th>
+                <th class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in query %}
+              <tr>
+                <td>{{i.nim}}</td>
+                <td>{{i.nama}}</td>
+                <td>{{(i.tgl_lahir | dateFormat) | timeIndo}}</td>
+                <td>{{i.alamat}}</td>
+                <td>{{i.jenis_kelamin | capitalize}}</td>
+                <td>{{i.created_at | timeIndo}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

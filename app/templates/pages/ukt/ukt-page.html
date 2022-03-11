@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+<!--- set filename -->
+{% set filename='indexUkt' %}
+<!--- page title -->
+{% block title %} Data Training UKT {% endblock %}
+<!--- item breadcrumb -->
+{% block breadcrumb %} UKT {% endblock %}
+<!--- content -->
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12 d-flex">
+    <div class="card card-table flex-fill">
+      <div class="card-header">
+        <a href=" {{url_for('ukt.addUkt')}} " class="btn btn-primary">.:: Tambah Data ::.</a>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-center mb-0">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Fakultas</th>
+                <th>Jurusan</th>
+                <th>Semester</th>
+                <th>IPK</th>
+                <th>Status MHS</th>
+                <th>organisasi</th>
+                <th>Tanggungan</th>
+                <th>Pendapatan</th>
+                <th>Bantuan</th>
+                {#
+                <th class="text-end">Action</th>
+                #}
+              </tr>
+            </thead>
+            <tbody>
+              {% for _, user, fak, jur, sms in query %}
+              <tr>
+                <td>{{ user.nama }}</td>
+                <td>{{ fak.fakultas }}</td>
+                <td>{{ jur.jurusan }}</td>
+                <td>{{ sms.id }}</td>
+                <td>{{ _.ipk}}</td>
+                <td>{{ _.status_mhs}}</td>
+                <td>{{ _.organisasi_mhs}}</td>
+                <td>{{ _.jml_tanggungan}}</td>
+                <td>{{ _.jml_pendapatan | idr}}</td>
+                <td>{{ _.bantuan | capitalize }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 d-flex">
+    <div class="card card-table flex-fill">
+      <div class="card-header">
+        :: DATA COUNT ::
+      </div>
+      <div class="card-body">
+        <div class="row row-sm aligns-item-start">
+        <h6 class="card-title">Data Total Training = {{pcTotal}}</h6>
+        <h6 class="card-title">Data Total P|Terima = {{pc1}}</h6>
+        <h6 class="card-title">Data Total P|TIdak = {{pc0}}</h6>
+        {# <h6 class="card-title">Data Total P|Fakultas Teknik "Terima" = {{pf1['terima']}}</h6>
+        <h6 class="card-title">Data Total P|Fakultas Teknik "Teidak" = {{pf1['tidak'] | angka}}</h6> #}
+       
+        {# <h6 class="card-title">Data Total P|Juruan T. Informatika "Terima" = {{pj['terima']}}</h6>
+        <h6 class="card-title">Data Total P|Juruan T. Informatika "Teidak" = {{pj['tidak'] | angka}}</h6> #}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    {% endblock %}
+  </div>
+</div>

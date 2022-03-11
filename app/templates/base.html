@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <title>BEASISWA TF UIM - Dashboard</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png')}}" />
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="../static/css/feathericon.min.css" />
+
+    <link rel="stylesheet" href="../static/plugins/morris/morris.css" />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    {# #}
+    <div class="main-wrapper">
+      <!-- header -->
+      {% include "layouts/header.html" %}
+      <!-- end header -->
+
+      <!-- sidebar meu -->
+      <div class="sidebar" id="sidebar">
+        <!-- left sidebar -->
+        {% include "layouts/sidebar.html" %}
+        <!-- left sidebar -->
+      </div>
+      <!-- end sidebar menu -->
+
+      <!-- content -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          {% if filename != 'dashboard' %}
+          <div class="page-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="page-title">{% block title %} {% endblock %}</h3>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href=" {{ url_for('dashboard.indexDashboard') }} ">Dashboard</a></li>
+                  <li class="breadcrumb-item active">{% block breadcrumb %} {% endblock %}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endif %} {% block content %} {% endblock %}
+        </div>
+      </div>
+      <!-- end content -->
+    </div>
+
+    {% block js %}
+    <!--- Blok JS -->
+    {% endblock %}
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../static/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+<!--- set filename -->
+{% set filename='addUser' %}
+<!--- page title -->
+{% block title %} Tambah User {% endblock %}
+<!--- item breadcrumb -->
+{% block breadcrumb %} Tambah Data {% endblock %}
+<!--- content -->
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Tambah Data User</h4>
+      </div>
+      <div class="card-body">
+        <form action="" method="post">
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">NIM</label>
+            <div class="col-md-10">
+              <input type="text" name="nim" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Nama</label>
+            <div class="col-md-10">
+              <input type="text" name="nama" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Tgl Lahir</label>
+            <div class="col-md-10">
+              <input type="date" name="tgl" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Alamat</label>
+            <div class="col-md-10">
+              <input type="text" name="alamat" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Jenis Kelamin</label>
+            <div class="col-lg-9">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="gender_male" value="laki-laki" checked />
+                <label class="form-check-label" for="gender_male"> Laki-Laki </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="gender_female" value="perempuan" />
+                <label class="form-check-label" for="gender_female"> Female </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-2">Password</label>
+            <div class="col-md-10">
+              <input type="password" name="password" class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-2"></label>
+            <div class="col-md-10 text-start">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
