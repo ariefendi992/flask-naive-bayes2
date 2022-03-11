@@ -3,9 +3,13 @@ from settings import Config
 from app.register import registerApp, registerTemplateFilter
 
 
-def createApp():
+def createApp(test_config=None):
     app = Flask(__name__)
-    app.config.from_object(Config)
+
+    if test_config is None:
+        app.config.from_object(Config)
+    else:
+        app.config.from_mapping(test_config)
     registerApp(app)
     registerTemplateFilter(app)
     registerExtensions(app)
